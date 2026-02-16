@@ -45,7 +45,7 @@ def save_to_db(data_json):
     password = os.getenv("AZURE_SQL_PASSWORD")
     driver = '{ODBC Driver 18 for SQL Server}'
     
-    connection_string = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password};Encrypt=yes;TrustServerCertificate=yes;Connection Timeout=30;'
+    connection_string = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password};Encrypt=yes;TrustServerCertificate=yes;Connection Timeout=120;'
     
     connection = pyodbc.connect(connection_string)
     cursor = connection.cursor()
