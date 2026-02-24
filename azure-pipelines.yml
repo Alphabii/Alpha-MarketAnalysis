@@ -1,15 +1,15 @@
 # Azure Pipelines equivalent of .github/workflows/run_fetch_script.yml
 # Documentation: https://learn.microsoft.com/en-us/azure/devops/pipelines/
 
-trigger: none  # Pas de trigger sur push/PR — uniquement scheduled ou manuel
+trigger: none # Pas de trigger sur push/PR — uniquement scheduled ou manuel
 
 schedules:
-  - cron: "0 12 * * *"  # Tous les jours a 12h UTC
+  - cron: "0 14 * * *" # Tous les jours a 14h UTC
     displayName: "Daily fetch at noon UTC"
     branches:
       include:
         - main
-    always: true  # Executer meme sans nouveaux commits
+    always: true # Executer meme sans nouveaux commits
 
 pool:
   vmImage: "ubuntu-latest"
